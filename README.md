@@ -43,13 +43,35 @@ The dataset used in this project is a time series wind turbine power dataset fro
 - MSE: 183,829,865
 - RMSE: 428.75
 
+### LSTM Model
+
+To predict ActivePower using the LSTM model:
+1. Data is reshaped into the format `[samples, timesteps, features]`.
+2. A Sequential model is used with two LSTM layers, each followed by a Dropout layer (0.2) and a Batch Normalization layer.
+3. The output layer is fully connected with the number of days to forecast (30).
+4. The model is compiled using the Adam optimizer (learning rate: 0.0001) and mean squared error loss function.
+5. EarlyStopping monitors validation loss during training, and training stops when no improvement is observed.
+6. The model is trained for 200 epochs with a batch size of 32 and a validation split of 0.2.
+
+The training stopped at epoch 84 due to no further improvement in validation loss.
+
+The actual and predicted ActivePower values for 30 days (from 2020-03-01 to 2020-03-30) are compared and visualized.
+
+### Model Evaluation
+
+Evaluation metrics used for the LSTM model:
+- Mean Absolute Error (MAE): 171.59
+- Root Mean Square Error (RMSE): 199.79
+
+With these scores, it can be concluded that the LSTM model's performance is not satisfactory.
+
 ## Conclusion
 
-While the forecasting model's predictive performance could be improved, the Prophet model successfully identifies anomalies in wind power generation data.
+This project explores the use of various time-series forecasting models for wind power prediction. While each model shows limitations in predictive performance, they demonstrate the potential for identifying anomalies in wind power generation data. Further research and model refinement may improve forecasting accuracy.
 
 ## Future Enhancements
 
-Future work could focus on optimizing the predictive model and improving forecasting accuracy.
+Future work may focus on optimizing the predictive models, exploring new forecasting techniques, and addressing the limitations in forecasting accuracy.
 
 ## Contact
 
