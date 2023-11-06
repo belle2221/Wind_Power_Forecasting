@@ -100,10 +100,10 @@ To further validate the effectiveness of our Random Forest model, we compared it
 
 The table below displays the results obtained from both our proposed Random Forest model and the model from the researcher:
 
-| Model                        | MAE   | RMSE  | R-squared |
-|------------------------------|-------|-------|-----------|
-| Proposed Random Forest Model | 48.74 | 58.31 | -         |
-| Researcher's Random Forest Model | X | Y | Z       |
+ MODELS                     | MAE    | RMSE   | R-Squared |
+|----------------------------|--------|--------|-----------|
+| Abdulelah Alkesaiberi’s RF  | 132.52 | 91.95  | 0.95      |
+| RANDOM FOREST              | 102.13 | 71.19  | 0.97      |
 
 From the results, our proposed Random Forest model outperformed the researcher's model. This comparison demonstrates the effectiveness and competitiveness of our model in predicting wind power generation.
 
