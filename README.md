@@ -65,14 +65,35 @@ Evaluation metrics used for the LSTM model:
 
 With these scores, it can be concluded that the LSTM model's performance is not satisfactory.
 
+### Random Forest Regressor Model
+
+The Random Forest Regressor model is initialized with default parameters without hyperparameter tuning. It is used to predict ActivePower based on the WindSpeed values in the dataset.
+
+The dataset is split into training and testing sets. The training set (X_train, y_train) contains the WindSpeed and ActivePower values for the first 718 rows of the data, while the testing set (X_test, y_test) contains the WindSpeed and ActivePower values for the next 30 rows. The actual and predicted ActivePower values are compared, and model performance metrics are evaluated.
+
+Figure 5.27 (a) and (b) show the comparison between the actual and predicted values for ActivePower in tabular form.
+
+![Figure 5.27 (a) & (b) Actual and Predicted Values DataFrame](insert_image_link_here)
+
+Figure 5.28 displays the graph illustrating the predicted ActivePower and actual ActivePower values for the X test dataset.
+
+![Figure 5.28 Graph of Predicted and Actual ActivePower on X test dataset](insert_image_link_here)
+
+Performance evaluation metrics for the Random Forest Regressor model are provided in Figure 5.29. These metrics include:
+- R-squared (R²): 0.900
+- Mean Absolute Error (MAE): 23.99
+- Root Mean Squared Error (RMSE): 29.35
+
+An R² value of 0.900 indicates that the model explains 90% of the variability in the target variable, while lower MAE and RMSE values suggest better predictive performance.
+
 ## Conclusion
 
-This project explores the use of various time-series forecasting models for wind power prediction. While each model shows limitations in predictive performance, they demonstrate the potential for identifying anomalies in wind power generation data. Further research and model refinement may improve forecasting accuracy.
+This project investigates the use of various machine learning and forecasting models to predict wind turbine ActivePower based on WindSpeed values. While some models perform well in terms of prediction accuracy, others demonstrate limitations in forecasting. Additional research and model optimization may enhance predictive capabilities.
 
 ## Future Enhancements
 
-Future work may focus on optimizing the predictive models, exploring new forecasting techniques, and addressing the limitations in forecasting accuracy.
+Future work may include model hyperparameter tuning, exploring alternative forecasting techniques, and addressing the challenges in achieving higher accuracy.
 
 ## Contact
 
-For questions, feedback, or collaboration opportunities, please contact [Your Name](mailto:youremail@example.com).
+For inquiries, feedback, or potential collaboration, please contact [Your Name](mailto:youremail@example.com).
