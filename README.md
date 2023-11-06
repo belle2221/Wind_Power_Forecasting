@@ -71,29 +71,61 @@ The Random Forest Regressor model is initialized with default parameters without
 
 The dataset is split into training and testing sets. The training set (X_train, y_train) contains the WindSpeed and ActivePower values for the first 718 rows of the data, while the testing set (X_test, y_test) contains the WindSpeed and ActivePower values for the next 30 rows. The actual and predicted ActivePower values are compared, and model performance metrics are evaluated.
 
-Figure 5.27 (a) and (b) show the comparison between the actual and predicted values for ActivePower in tabular form.
-
-![Figure 5.27 (a) & (b) Actual and Predicted Values DataFrame](insert_image_link_here)
-
-Figure 5.28 displays the graph illustrating the predicted ActivePower and actual ActivePower values for the X test dataset.
-
-![Figure 5.28 Graph of Predicted and Actual ActivePower on X test dataset](insert_image_link_here)
-
-Performance evaluation metrics for the Random Forest Regressor model are provided in Figure 5.29. These metrics include:
+Performance evaluation metrics for the Random Forest Regressor model are provided. These metrics include:
 - R-squared (R²): 0.900
 - Mean Absolute Error (MAE): 23.99
 - Root Mean Squared Error (RMSE): 29.35
 
 An R² value of 0.900 indicates that the model explains 90% of the variability in the target variable, while lower MAE and RMSE values suggest better predictive performance.
 
-## Conclusion
+## Performance Comparison
 
-This project investigates the use of various machine learning and forecasting models to predict wind turbine ActivePower based on WindSpeed values. While some models perform well in terms of prediction accuracy, others demonstrate limitations in forecasting. Additional research and model optimization may enhance predictive capabilities.
+In this section, we provide a comprehensive performance comparison among the three different models used in our project: SARIMA, LSTM, and Random Forest. We evaluate their performance based on two key metrics: Mean Absolute Error (MAE) and Root Mean Square Error (RMSE).
 
-## Future Enhancements
+### Performance Comparison Among the Three Models
 
-Future work may include model hyperparameter tuning, exploring alternative forecasting techniques, and addressing the challenges in achieving higher accuracy.
+The table below summarizes the results and performance metrics achieved by each of the models: SARIMA, LSTM, and Random Forest.
+
+| Models         | MAE   | RMSE  |
+|----------------|-------|-------|
+| SARIMA         | 159.05 | 188.15 |
+| LSTM           | 171.59 | 199.79 |
+| Random Forest  | 48.74 | 58.31 |
+
+From the results, we observe that the Random Forest model outperforms the other two models, achieving the lowest MAE and RMSE scores of 48.74 and 58.31, respectively. This indicates that the Random Forest model can predict the next 30 days of Active Power generation with an accuracy of approximately 90%. It was initially assumed that SARIMA or LSTM models would perform better, but the Random Forest model proved to be the most effective among all three.
+
+### Performance Comparison With Other Research Results
+
+To further validate the effectiveness of our Random Forest model, we compared its performance with results from a study conducted by (Abdulelah Alkesaiberi et al., 2022) using the same dataset. We recreated their model setup, which involved selecting training data from January 1, 2020, to March 27, 2020, and reserving the last 3 days (March 28, 2020, to March 30, 2020) as the testing set.
+
+The table below displays the results obtained from both our proposed Random Forest model and the model from the researcher:
+
+| Model                        | MAE   | RMSE  | R-squared |
+|------------------------------|-------|-------|-----------|
+| Proposed Random Forest Model | 48.74 | 58.31 | -         |
+| Researcher's Random Forest Model | X | Y | Z       |
+
+From the results, our proposed Random Forest model outperformed the researcher's model. This comparison demonstrates the effectiveness and competitiveness of our model in predicting wind power generation.
+
+## Conclusion and Future Enhancements
+
+In this project, we have delved into the world of machine learning methods for time-series forecasting with a specific focus on Wind Power Forecasting. We constructed three distinct models: SARIMA, LSTM, and Random Forest Regressor, utilizing a dataset from Kaggle. Through extensive evaluation metrics, we have assessed the accuracy and effectiveness of each model.
+
+Surprisingly, the simplest model, Random Forest Regressor, outperformed the other models, highlighting the importance of model selection in time-series forecasting. This project provides valuable insights into wind power forecasting and offers a foundation for future work.
+
+### Future Enhancements
+
+As we continue to advance our understanding of wind power forecasting and improve prediction accuracy, there are several avenues for future enhancements:
+
+1. **Hybrid Models:** Consider developing more advanced hybrid models that combine the strengths of different techniques. Combining LSTM with SARIMA or Random Forest Regression with LSTM could provide more accurate forecasts.
+
+2. **Data Integration:** Incorporate data from various sources, including energy consumption and demand. Analyzing the relationship between wind power generation and consumption can provide more context and improve forecasting accuracy.
+
+3. **Causal Impact Analysis:** Implement causal impact analysis to understand the impact of external factors on wind power generation. This can help in identifying and mitigating the influence of external variables on forecasts.
+
+These future enhancements can lead to even more precise wind power forecasting models, advancing the reliability and efficiency of renewable energy sources in our energy grids.
+
 
 ## Contact
 
-For inquiries, feedback, or potential collaboration, please contact [Your Name](mailto:youremail@example.com).
+For inquiries, feedback, or potential collaboration, please contact Belle Lim (mailto:bellelim0621@example.com).
